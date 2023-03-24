@@ -9,4 +9,3 @@ def LCA(root, p, q):
   elif left and right:
     return root
   return left or right
-
