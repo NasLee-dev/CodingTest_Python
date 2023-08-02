@@ -1,15 +1,15 @@
 def validCheck(S):
-  stack = [];
+  stack = []
   for p in S:
     if p == "(":
-      stack.append(")");
+      stack.append(")")
     elif p == "{":
-      stack.append("}");
+      stack.append("}")
     elif p == "[":
-      stack.append("]");
+      stack.append("]")
     elif not stack or stack.pop() != p:
-      return False;
+      return False
   return not stack
 
 
-print(validCheck(S= "(((({{{{}}}}))))[]"));
+print(validCheck(S= "("));
