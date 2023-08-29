@@ -3,6 +3,7 @@ function ListNode(val, next) {
   this.next = (next===undefined ? null : next)
 };
 
+// 1번 솔루션
 var removeNthFromEnd = function(head, n) {
   let dummy = new ListNode(0);
   dummy.next = head;
@@ -20,3 +21,20 @@ var removeNthFromEnd = function(head, n) {
 };
 
 console.log(removeNthFromEnd([1,2,3,4,5], 2));
+
+// 2번 솔루션
+var removeNthFromEnd2 = function(head, n) {
+  let arr = [];
+  let res = new ListNode(0);
+  let copy = res;
+  while (head) {
+    arr.push(head);
+    head = head.next;
+  };
+  for(let i = 0; i < arr.length; i++) {
+    if (arr.length - i === n ) continue;
+    copy.next = new ListNode(arr[i]);
+    copy = copy.next;
+  }
+  return res.next;
+}
