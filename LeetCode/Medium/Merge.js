@@ -25,7 +25,7 @@ var merge2 = function(intervals) {
   const result = [intervals[0]];
 
   for (let [start, end] of intervals) {
-    const endPrev = result.at(-1)[1];
+    const endPrev = result.at(-1)[1];   // at(-1) is the last element of the array, same as result[result.length - 1]
     if (start <= endPrev) {
       result.at(-1)[1] = Math.max(end, endPrev);
     } else {
